@@ -11,8 +11,21 @@ TODO
 		-	record both total time elapsed and per op time elapsed
 3. async support
 4. for website, something akin to IRHydra to show how compiler is actually running the code
-5. [matcha](https://github.com/logicalparadox/matcha)
-6. 
+5. 
+6. move `debug` to `ctx.log`
+	-	should be tailored to benchmark name
+7. how should benchmark options be handled?
+8. 
+9. 
+
+
+
+## Other
+
+1. [matcha](https://github.com/logicalparadox/matcha)
+2. [jsperf](http://calendar.perfplanet.com/2010/bulletproof-javascript-benchmarks/)
+	-	[benchmark.js](https://github.com/bestiejs/benchmark.js/blob/master/benchmark.js)
+3. 
 
 
 ## Notes
