@@ -1,25 +1,19 @@
 'use strict';
 
-// MODULES //
-
-var path = require( 'path' ),
-	exportDir = require( 'export-dir-files' );
-
-
 // LOAD //
 
 /**
-* FUNCTION: load()
+* FUNCTION: load( dir )
 *	Loads test files.
 *
+* @param {String} dir - directory containing tests
 * @returns {Object} object containing tests
 */
-function load() {
-	var dir = path.join( __dirname, 'test' );
-	return exportDir( dir );
+function load( dir ) {
+	return require( dir );
 } // end FUNCTION load()
 
 
 // EXPORTS //
 
-module.exports = load();
+module.exports = load;

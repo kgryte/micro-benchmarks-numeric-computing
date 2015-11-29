@@ -3,16 +3,15 @@
 // PRINT RESULTS //
 
 /**
-* FUNCTION: print( name, time, num )
+* FUNCTION: print( name, results )
 *	Prints results to standard out.
 *
 * @param {String} name - benchmark name
-* @param {Number} time - number of elapsed seconds
-* @param {Number} num - number of operations
+* @param {Array} results - test results
 * @returns {Void}
 */
-function print( name, time, num ) {
-	console.log( 'javascript,%s,%d,%d', name, time, num );
+function print( name, results ) {
+	console.log( 'javascript,%s,%s', name, results.join( ',' ) );
 } // end FUNCTION print()
 
 

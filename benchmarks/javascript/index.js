@@ -2,48 +2,43 @@
 
 // MODULES //
 
-var run = require( './run.js' ),
-	tests = require( './load.js' ),
-	output = require( './output.js' );
-
-
-// VARIABLES //
-
-var NUMREPEATS = 5;
+var OPTS = require( './opts.js' ),
+	load = require( './load.js' ),
+	validate = require( './validate.js' ),
+	runner = require( './runner.js' );
 
 
 // MAIN //
 
 /**
-* FUNCTION: main()
+* FUNCTION: main( [options] )
 *	Main function.
 *
+* @param {Object} [options] - benchmark options
 * @returns {Void}
 */
-function main() {
-	var test,
-		keys,
-		time,
-		name,
+function main( options ) {
+	var tests,
 		opts,
-		len,
-		i, j;
+		err;
 
-	opts = 1e6;
+	// TODO: remove
+	opts = OPTS;
 
-	keys = Object.keys( tests );
-	len = keys.length;
-	for ( i = 0; i < len; i++ ) {
-		name = keys[ i ];
-		test = tests[ name ];
-		for ( j = 0; j < NUMREPEATS; j++ ) {
-			time = run( test, opts );
-			output( name, time, opts );
+	// opts = {};
+	if ( arguments.length ) {
+		err = validate( opts, options );
+		if ( err ) {
+			throw err;
 		}
 	}
+	// TODO: default is cwd and sub-directory named "benchmark"
+	tests = load( opts.dir );
+
+	runner( tests, opts );
 } // end FUNCTION main()
 
 
 // EXPORTS //
 
-module.exports = main();
+module.exports = main(); // TODO: should not execute

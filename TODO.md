@@ -10,7 +10,9 @@ TODO
 	-	need a way to handle sub-nanosecond ops (?)
 		-	record both total time elapsed and per op time elapsed
 3. async support
-4. 
+4. for website, something akin to IRHydra to show how compiler is actually running the code
+5. [matcha](https://github.com/logicalparadox/matcha)
+6. 
 
 
 ## Notes

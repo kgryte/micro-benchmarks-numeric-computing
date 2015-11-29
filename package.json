@@ -35,7 +35,7 @@
     "url": "https://github.com/kgryte/micro-benchmarks-numeric-computing/issues"
   },
   "dependencies": {
-    "export-dir-files": "^1.0.1"
+    "debug": "^2.2.0"
   },
   "devDependencies": {
     "chai": "3.x.x",
